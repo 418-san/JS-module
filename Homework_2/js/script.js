@@ -73,17 +73,15 @@ if (num === 0) {
 
 // 4 task
 let x = 100;
-for (let i = 1; i <= x; i++) {
 
-    if (parseInt (x / 3 ) ) {
-        console.log('Three')
+for (let i = 1; i <= x; i++) {
+    if (i % 3 === 0) {
+        console.log('Three');
+    } else if (i % 5 === 0) {
+        console.log('Five');
+    } else if (i % 3 === 0 && i % 5 === 0 ) {
+        console.log('ThreeFive');   
+    } else { 
+        console.log(i); 
     }
-    if (parseInt (x / 5 ) ) {
-        console.log('Five')
-    }    
-    if (parseInt (x / 5 && x / 3 ) ) {
-        console.log('ThreeFive')
-    }    
-    console.log("x = " + x);
-    x--;
 }
