@@ -38,5 +38,10 @@ let studentArr = {
     Studies: 'Место обучения'
 };
 
-console.log(studentArr);
+function showStudent(studentArr) {
+    for (let [key, value] of Object.entries(studentArr)) {
+        console.log(`${key}: ${value}`);
+    }
+}
 
+showStudent(studentArr);
