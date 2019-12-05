@@ -14,8 +14,14 @@
 // от 1 до 100, но так, чтобы оно не повторялось, пока не будут перебраны все
 // числа из этого промежутка. Решите задачу через замыкания - в замыкании должен
 // хранится массив чисел, которые уже были сгенерированы функцией.
+//* Пока еще не понял как реализовать передачу сгенерированных чисел в массив  *// 
+function getNumInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
-
+console.log(getNumInt(1, 100));
 
 //  task 3
 // Построить объект студент:
@@ -29,12 +35,12 @@ let student = {
     Hobby: ['программирование', 'музыка', 'аниме'],
     Studies: 'Учится в ИТМО',
 
-    getOwnObject: function() {
-        return this;
+    getOwnObject () {
+        console.log(`${this.Name} ${this.Surname}. ${this.Age}. Интересы: ${this.Hobby}. ${this.Studies}`);
     }
 };
 
-console.log(student.getOwnObject());
+student.getOwnObject();
 
 
 //  task 4
@@ -42,8 +48,11 @@ console.log(student.getOwnObject());
 // Факториал числа - это число, умноженное на себя минус один, затем на себя
 // минус два и так далее, до единицы. Обозначается n!
 // Определение факториала можно записать как: n! = n * (n - 1) * (n - 2) * ...*1
+function writeN(n) { 
+    return (n !== 1) ? n * writeN(n - 1) : 1;
+}
 
-
+console.log(writeN(3));
 
 //  task 5
 // Отсортировать массив по полю 'price' используя метод sort и передаваемую ей функцию,
