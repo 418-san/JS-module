@@ -10,9 +10,18 @@ alert(num);
 
 //  2 task
 // Дана строка и символ. Удвоить каждое вхождение заданного символа в строку.
-let symb = prompt('','@');
 let str1 = prompt('','строка');
-alert(str1 + symb.repeat(2));
+let symb = prompt('','о');
+let res = '';
+
+for (let i = 0; i< str1.length; i++) {
+    if (str1[i] === symb) {
+        res += str1[i].repeat(2);
+    } else {
+        res += str1[i];
+    }
+}
+alert(res);
 
 // 3 task
 // Проверить что введенный пароль удовлетворяет
@@ -23,7 +32,7 @@ alert(str1 + symb.repeat(2));
 // - содержит обязательно один из неалфавитных символов (например, !, $, #, %).
 let str2 = prompt('Введите пароль:aBb30k!1z');
 
-let regExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]){3,}(?=.*[$!#%]{1})[a-zA-Z0-9$!#%]{9,}$/ig
+regExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]){3,}(?=.*[$!#%]{1})[a-zA-Z0-9$!#%]{9,}$/ig
 
 if(regExp.test(str2)) {
     alert("пароль введён правильно");
