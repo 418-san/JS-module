@@ -8,20 +8,43 @@
 // console.log(foo(a, 'count', 10)); /* В консоль выведет: [{name:'static', count:0},
 // {name:'static', count:1}, ..., {name:'static', count:9}] */
 
+let a = {
+    name: 'static',
+    count: 0
+}
+console.log(foo(a, 'count', 10));
+
+
+function foo (obj, j, count) {
+    let result = [];
+    for (let i = obj.count; i < count; i++){
+        Obj = Object.assign({},obj);
+        Obj[j] += i;
+        result.push(Obj);
+    }
+    return result;
+}
 
 //  task 2
 // Сделайте функцию, каждый вызов который будет генерировать одно случайное число
 // от 1 до 100, но так, чтобы оно не повторялось, пока не будут перебраны все
 // числа из этого промежутка. Решите задачу через замыкания - в замыкании должен
 // хранится массив чисел, которые уже были сгенерированы функцией.
-//* Пока еще не понял как реализовать передачу сгенерированных чисел в массив  *// 
-function getNumInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+let min = 1,
+    max = 100;
+
+function getRunnum () {
+    let result = [];
+    
+    return function getNumInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        random = Math.floor(Math.random() * (max - min + 1)) + min;
+        
+    }
 }
 
-console.log(getNumInt(1, 100));
+console.log(getRunnum());
 
 //  task 3
 // Построить объект студент:
