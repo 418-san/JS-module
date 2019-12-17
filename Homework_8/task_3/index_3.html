@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Homework_8.3</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="comments">
+            <div class="comments__field"></div>
+
+            <form class="comment__form">
+                <label for="comment">Комментарий</label>
+                <textarea required placeholder="Введите комментарий" name="comment__textarea" id="comment__textarea" 
+                    title="Оправка по Enter, перевод строки по Shift + Enter"></textarea>
+                <button type="submit" id="comment__send">Комментировать</button>
+            </form>
+
+            <template id="comment-template">
+                <div class="comment">
+                    <img class="comment__avatar" src="https://image.flaticon.com/icons/png/512/149/149071.png" width="40" alt="avatar">
+                    <p class="comment__username">Roman</p>
+                    <p class="comment__date"></p>
+                    <p class="comment__text"></p>
+                </div>
+            </template>
+        </div>
+    </body>
+    <script src="script_3.js"></script>
+</html>
