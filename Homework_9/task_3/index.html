@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Homework_9.3</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.5.0/jasmine.min.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.5.0/jasmine.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.5.0/jasmine-html.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.5.0/boot.min.js"></script>
+
+        <!-- include source files here... -->
+        <script>
+            function pow(x) {
+                return 1/x + Math.sqrt(x);
+            }
+        </script>
+
+        <script>
+            describe("Тестирование мат. функции", function () {
+                let msg = "Позитивный тест: x = 1, result = 2";
+                it(msg, function () {
+                    let rez = pow(1);
+                    expect(rez).toBe(2);
+                });
+
+                let msg1 = "Позитивный тест: x = 16 , result = 4.0625";
+                it(msg1, function () {
+                    let rez = pow(16);
+                    expect(rez).toBe(4.0625);
+                });
+
+                let msg2 = "Негативный тест: x = 4, result = 2.3";
+                it(msg2, function () {
+                    let rez = pow(4);
+                    expect(rez).toBe(2.3);
+                });
+                let msg3 = "Негативный тест: x = 8, result = 0";
+                it(msg3, function () {
+                    let rez = pow(8);
+                    expect(rez).toBe(NaN);
+                });
+            });
+        </script>
+    </head>
+    <body>
+                
+    </body>
+</html>
+
+<!-- #3
+Подключить стороннюю библиотеку для юнит тестирования.
+Написать несколько тестов для функции, рассчитывающей y = 1/x + sqrt(x). -->
