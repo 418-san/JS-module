@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Homework_11.2</title>
+    </head>
+    <body>
+        <script>
+            class Human{
+                constructor(name, age, sex, hobby){
+                    this.name = name;
+                    this.age = age;
+                    this.sex = sex;
+                    this.hobby = hobby;
+                }
+                toString(){
+                    return `Человек: ${this.name}. Возраст: ${this.age}. Пол: ${this.sex} Интересы:${this.hobby.toString()}.`;
+                }
+
+            }
+
+            let human = new Human('Иван', '25 лет', 'м.', ['музыка, программирование']);
+            console.log(human.toString());
+
+            class Student extends Human{
+                constructor(name, age, sex, hobby, university){
+                    super(name, age, sex, hobby);
+                    this.university = university;
+                }
+                toString(){
+                    return `Студент: ${this.name}. Возраст: ${this.age}. Пол: ${this.sex} Интересы: ${this.hobby.toString()}. Обучается в ${this.university}.`
+                }
+            }
+
+            let student = new Student('Иван', '25 лет', 'м.', ['музыка, программирование'], 'ИТМО');
+            console.log(student.toString());
+                
+        </script>
+    </body>
+</html>
+
+<!-- #2. Используя смешанное наследование:
+Создать шаблон объектов «Человек».
+Свойства «Имя», «Возраст», «Пол», «Интересы».
+Метод преобразования к строке вида: «Человек:
+Иван. Возраст: 25 лет. Пол: м. Интересы:
+музыка, программирование.»
+Создать шаблон объектов «Студент».
+Свойства от наследованные от шаблона объектов
+«Человек» и добавить «Институт».
+Переопределить метод преобразования к строке вида:
+«Студент: Иван. Возраст: 25 лет. Пол: м. Интересы:
+музыка, программирование. Обучается в ИТМО.» -->

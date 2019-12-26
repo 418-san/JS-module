@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Homework_11.1</title>
+    </head>
+    <body>
+        <script>
+            class Product{
+                constructor(name, price){
+                    this.name = name;
+                    this.price = price;
+                }
+
+            }
+
+            class Basket{
+                constructor(){
+                    this.prods = [];
+                    this.quantity = 0;
+                    this.sumProd = 0;
+                }
+
+                addProduct(product){
+                    this.prods.push(product);
+                    this.sumProd += product.price;
+                    this.quantity++;
+                }
+                getSum(){
+                    return this.sumProd;
+                }
+                getQuantity(){
+                    return this.quantity;
+                }
+            }
+
+            let product1 = new Product('product1', 25);
+            let product2 = new Product('product2', 50);
+            let product3 = new Product('product3', 100);
+
+            let basket = new Basket;
+            basket.addProduct(product1);
+            basket.addProduct(product2);
+            basket.addProduct(product3);
+            console.log(basket.getSum());
+            console.log(basket.getQuantity());
+
+        </script>
+    </body>
+</html>
+
+<!-- #1. Используя прототипы:
+Создать шаблон объектов «Товар».
+Свойства товара «Имя» и «Цена».
+Создать шаблон объектов «Корзина товаров».
+Cвойства объекта:
+- Массив товаров;
+- Количество товаров;
+- Сумма товаров.
+Методы объекта:
+- Добавить товар;
+- Вернуть сумму товара;
+- Вернуть количество товара. -->
